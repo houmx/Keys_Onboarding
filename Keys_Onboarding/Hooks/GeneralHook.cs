@@ -28,6 +28,7 @@ namespace Keys_Onboarding.Hooks
                 case 2:
                     Driver.driver = new ChromeDriver();
                     Driver.driver.Manage().Window.Maximize();
+                    Driver.driver.Manage().Cookies.DeleteAllCookies();
                     break;
 
             }

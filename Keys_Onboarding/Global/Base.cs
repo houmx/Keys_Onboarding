@@ -18,7 +18,7 @@ namespace Keys_Onboarding.Global
         public static String ExcelPath = Keys_Resource.ExcelPath;
         public static string ScreenshotPath = Keys_Resource.ScreenShotPath;
         public static string ReportPath = Keys_Resource.ReportPath;
-        //#endregion
+        #endregion
 
         #region reports
         public static ExtentTest test;
@@ -26,56 +26,5 @@ namespace Keys_Onboarding.Global
         public static ExtentHtmlReporter htmlReporter;
         #endregion
 
-        #region setup and tear down
-        [SetUp]
-        public void Inititalize()
-        {
-
-            // advisasble to read this documentation before proceeding http://extentreports.relevantcodes.com/net/
-            switch (Browser)
-            {
-
-                case 1:
-                    Driver.driver = new FirefoxDriver();
-                    break;
-                case 2:
-                    Driver.driver = new ChromeDriver();
-                    Driver.driver.Manage().Window.Maximize();
-                    break;
-
-            }
-            if (Keys_Resource.IsLogin == "true")
-            {
-                LoginPage loginobj = new LoginPage();
-                loginobj.LoginSuccessfull();
-            }
-            else
-            {
-                RegisterPage obj = new RegisterPage();
-                obj.Navigateregister();
-            }
-
-            htmlReporter = new ExtentHtmlReporter(ReportPath);
-            htmlReporter.LoadConfig(Keys_Resource.ReportXMLPath);
-            extent = new ExtentReports();
-            extent.AttachReporter(htmlReporter);
-        }
-
-
-        [TearDown]
-        public void TearDown()
-        {
-            // Screenshot
-            String img = SaveScreenShotClass.SaveScreenshot(Driver.driver, "Report");//AddScreenCapture(@"E:\Dropbox\VisualStudio\Projects\Beehive\TestReports\ScreenShots\");
-            test.Log(Status.Info, "Image example: " + img);
-    
-            // calling Flush writes everything to the log file (Reports)
-            extent.Flush();
-            // Close the driver :)            
-            Driver.driver.Close();
-        }
-        #endregion
-
     }
 }
-#endregion

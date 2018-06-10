@@ -26,7 +26,7 @@ namespace Keys_Onboarding.Specflow.Owners.Properties.My_Properties
             if (Keys_Resource.IsLogin == "true")
             {
                 LoginPage loginobj = new LoginPage();
-                loginobj.LoginSuccessfull();
+                loginobj.LoginSuccessfull(2);
             }
             else
             {
@@ -44,8 +44,8 @@ namespace Keys_Onboarding.Specflow.Owners.Properties.My_Properties
         }
         #endregion 
 
-        [Then(@"the search result for this property is right")]
-        public void ThenTheSearchResultForThisPropertyIsRight()
+        [Then(@"the search result for this property is correct")]
+        public void ThenTheSearchResultForThisPropertyIsCorrect()
         {
             // Got the search data from excel
             ExcelLib.PopulateInCollection(Base.ExcelPath, "Property Details");
@@ -57,7 +57,7 @@ namespace Keys_Onboarding.Specflow.Owners.Properties.My_Properties
             MyPropertiesPage propertyOwner = new MyPropertiesPage();
 
             //Assert.AreEqual(ExpectedValue, ActualValue);
-            if (propertyOwner.SearchdAPropertySuccessfully(searchPropertyName))
+            if (propertyOwner.SearchAPropertySuccessfully(searchPropertyName))
 
                 Base.test.Log(AventStack.ExtentReports.Status.Pass, "Test Passed, Search successfull");
 

@@ -30,6 +30,7 @@
         <!-- slideout menu -->
         <ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
             <li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+                <li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
                         <li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
         </ul>
 
@@ -43,7 +44,7 @@
         <ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 
             <a>
-                <span class='suite-start-time label blue darken-3'>22/05/2018 9:35:16 AM New Zealand Standard Time</span>
+                <span class='suite-start-time label blue darken-3'>8/06/2018 4:12:08 PM New Zealand Standard Time</span>
             </a>
             <a>
                 <span class="label blue darken-3">3.1.0</span>
@@ -78,6 +79,16 @@
             <!-- test toggle -->
 
             <!-- category toggle -->
+                <div class='chip transparent'>
+                    <a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+                        <i class='material-icons'>local_offer</i> Category
+                    </a>
+                    <ul id='category-toggle' class='dropdown-content'>
+                            <li><a href='#'>AddTenantTesting</a></li>
+                        <li class='divider'></li>
+                        <li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+                    </ul>
+                </div>
             <!-- category toggle -->
 
             <!-- clear filters -->
@@ -158,16 +169,21 @@
 
                     <li class='test displayed active  pass' status='pass' test-id='1'>
                         <div class='test-heading'>
-                            <span class='test-name'>Add New Property -- fill out finance details form and go to Tenant Details Section</span>
-                            <span class='test-time'>22/05/2018 9:35:34 AM</span>
+                            <span class='test-name'>Send Request -- Send a request to tenant</span>
+                            <span class='test-time'>8/06/2018 4:12:52 PM</span>
                             <span class='test-status right pass'>Pass</span>
                         </div>
                         <div class='test-content hide'>
                                 <div class='test-time-info'>
-                                    <span class='label start-time'>22/05/2018 9:35:34 AM</span>
-                                    <span class='label end-time'>22/05/2018 9:35:34 AM</span>
-                                    <span class='label time-taken grey lighten-1 white-text'>00:00:00.0471244</span>
+                                    <span class='label start-time'>8/06/2018 4:12:52 PM</span>
+                                    <span class='label end-time'>8/06/2018 4:12:52 PM</span>
+                                    <span class='label time-taken grey lighten-1 white-text'>00:00:00.0516544</span>
                                 </div>
+                                    <div class='test-attributes'>
+                                            <div class='category-list'>
+                                                    <span class='category label white-text'>AddTenantTesting</span>
+                                            </div>
+                                                                            </div>
                                     <div class='test-steps'>
                                         <table class='bordered table-results'>
                                             <thead>
@@ -180,8 +196,8 @@
                                             <tbody>
                                                     <tr class='log' status='pass'>
                                                         <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-                                                        <td class='timestamp'>22/05/2018 9:35:34 AM</td>
-                                                        <td class='step-details'>Test passed, go to Tenant Details Section successfully</td>
+                                                        <td class='timestamp'>8/06/2018 4:12:52 PM</td>
+                                                        <td class='step-details'>Test passed, successfully navigated to my properties page from Send Request Page</td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -214,7 +230,72 @@
 
 </div>
 <!-- test view -->
-            <!-- category view -->
+            <div id='category-view' class='view hide'>
+        <section id='controls'>
+            <div class='controls grey lighten-4'>
+                <!-- search -->
+                <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                    <a href="#" class='search-div'>
+                        <i class='material-icons'>search</i> Search
+                    </a>
+
+                    <div class='input-field left hide'>
+                        <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                    </div>
+
+                </div>
+                <!-- search -->
+            </div>
+        </section>
+
+        <div class='subview-left left'>
+
+            <div class='view-summary'>
+                <h5>Categories</h5>
+                <ul id='category-collection' class='category-collection'>
+
+                        <li class='category displayed active'>
+                            <div class='category-heading'>
+                                <span class='category-name'>AddTenantTesting</span>
+                                <span class='category-status right'>
+ <span class='label pass'>1</span>                                                                                                         </span>
+                            </div>
+                            <div class='category-content hide'>
+                                <div class='category-status-counts'>
+ <span class='label green accent-4 white-text'>Passed: 1</span>                                                                                                         </div>
+
+                                <div class='category-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                            <tr>
+                                                <th>Timestamp</th>
+                                                <th>TestName</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td>8/06/2018 4:12:52 PM</td>
+                                                    <td class='linked' test-id='1'>Send Request -- Send a request to tenant</td>
+                                                    <td><span class='test-status pass'>Pass</span></td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class='subview-right left'>
+            <div class='view-summary'>
+                <h5 class='category-name'></h5>
+            </div>
+        </div>
+    </div>
+<!-- category view -->
             
 
 
@@ -274,23 +355,45 @@
             <div class='col s2'>
                 <div class='card-panel r'>
                     Start
-                    <div class='panel-lead'>22/05/2018 9:35:16 AM</div>
+                    <div class='panel-lead'>8/06/2018 4:12:08 PM</div>
                 </div>
             </div>
             <div class='col s2'>
                 <div class='card-panel r'>
                     End
-                    <div class='panel-lead'>22/05/2018 9:35:37 AM</div>
+                    <div class='panel-lead'>8/06/2018 4:12:56 PM</div>
                 </div>
             </div>
             <div class='col s2'>
                 <div class='card-panel r'>
                     Time Taken
-                    <div class='panel-lead'>00:00:20.9543322</div>
+                    <div class='panel-lead'>00:00:47.6490350</div>
                 </div>
             </div>
 
 
+                <div class='col s6'>
+                    <div class='card-panel'>
+                        <span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Passed</th>
+                                <th>Failed</th>
+                                <th>Others</th>
+								<th>Passed %</th>
+                            </tr>
+                                <tr>
+                                    <td>AddTenantTesting</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+									<td>100%</td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
